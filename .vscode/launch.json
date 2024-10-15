@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/adamj/OneDrive/Desktop/ds exam",
-      "program": "c:/Users/adamj/OneDrive/Desktop/ds exam/build/Debug/outDebug",
+      "cwd": "c:/Users/adamj/OneDrive/Desktop/ds exam/ds-exam",
+      "program": "c:/Users/adamj/OneDrive/Desktop/ds exam/ds-exam/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

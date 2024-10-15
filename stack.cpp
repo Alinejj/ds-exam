@@ -67,6 +67,19 @@ class Stack{
             return this->arr[this->currentSize];
         }
     }
+
+    void display() {
+        if (isEmpty()) {
+            cout << "Stack is empty" << endl;
+        } else {
+            cout << "Stack elements: ";
+            for (int i = 0; i < currentSize; i++) {
+                cout << arr[i] << " ";
+            }
+            cout << endl;
+        }
+    }
+    
     //return size of stack
     int size(){
         return this->currentSize;

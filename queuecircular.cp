@@ -23,7 +23,7 @@ class Queue{
 
     //check if queue is full
     bool isFull(){
-        return rear == capacity - 1;
+        return ((rear + 1) % capacity == front);
     }
 
     //add element to queue
@@ -33,11 +33,14 @@ class Queue{
             return;
         }
         if(isEmpty()){
-            front = 0;
+            front = rear = 0;
             cout<<"Queue is empty"<<endl;
         }
-       rear++;
-       arr[rear] = value;
+        else{
+            //increment rear from -1 into queue
+            rear = (rear + 1) % capacity;
+        }
+        arr[rear] = value;
     }
 
     //remove element from queue
@@ -48,7 +51,12 @@ class Queue{
         }
 
         int value = arr[front];
-        front++;
+        if(front == rear){
+            front = rear = -1;
+        }
+        else{
+            front = (front + 1) % capacity;
+        }
         return value;
     }
 
@@ -66,11 +74,15 @@ class Queue{
             return;
         }
 
-        for(int i = front; i<= rear; i++){
+        int i = front;
+        while(true){
             cout<<arr[i]<<" ";
+            if(i == rear){
+                break;
+            }
+            i = (i + 1) % capacity;
         }
         cout<<endl;
-        
     }
 
     int size(){
